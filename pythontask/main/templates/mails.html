@@ -1,0 +1,22 @@
+{% extends 'main/default.html' %}
+
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+
+        <form action="{% url 'mails:mails' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+        <label for="client_name">Your name</label>
+            <input type="text" name="client_name"><br>
+        <label for="message"> message </label>
+            <input type="text" name="message"><br>
+        <label for="date">Choose time</label>
+            <input type="date" name="date"><br>
+        <input type="submit">
+        </form>
+{% endblock %}
